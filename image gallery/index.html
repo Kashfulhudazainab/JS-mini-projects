@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="task1.css">
+   
+    <title>TASK 1 -> IMAGE GALLERY</title>
+    <style>
+        *{
+  margin:0;
+  padding:0;
+}
+
+.container{
+  position:relative;
+  background-color: aqua;
+}
+
+.container h1{
+font-size: 40px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-weight: normal;
+padding:15px;
+text-align: center;
+color: blue;
+text-decoration: underline;
+}
+
+ .container .gallery-container{
+  display:flex;
+  flex-wrap: wrap;
+  gap:20px;
+  justify-content: center;
+  padding:15px;
+ }
+
+ .container .gallery-container .property{
+display: block;
+height: 300px;
+width: 300px;
+border:8px solid rgb(15, 81, 15);
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+overflow: hidden;
+cursor:pointer;
+ }
+
+ .container .gallery-container .property img{
+  height: 100%;
+  width: 100%;
+  object-fit:cover;
+  transition:2s linear;
+ }
+
+ .container .gallery-container .property:hover img{
+transform:scale(1.1);
+ }
+
+ .container .popup-image{
+position: fixed;
+top:0;
+left:0;
+background: rgba(0,0,0,0.9);
+height:100%;
+width:100%;
+z-index: 100;
+display: none;
+ }
+
+ .container .popup-image span{
+ position:absolute;
+ top:0;
+ right:10px;
+ font-size:40px;
+ font-weight: bold;
+ color:#fff;
+ cursor:pointer;
+ z-index: 100;
+ }
+
+ .container .popup-image img{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  border:5px solid #fff;
+  border-radius: 5px;
+  height:500px;
+  width:650px;
+object-fit: cover;
+}
+
+@media(max-height:700px)
+{
+  .container .popup-image img{
+width:60%;
+  }
+}
+    </style>
+</head>
+<body>
+   
+    <div class="container">
+
+      <h1>
+IMAGE GALLERY
+      </h1>
+
+        <div class="gallery-container">
+          <div class="property">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3HTgKkm-tBcNbiLG5eCL12nOngY_fEta2BA&s" alt="Image 1" class="gallery-image" height="300px" width="300px">
+        </div>
+        <div class="property">
+          <img src="https://images.pexels.com/photos/34098/south-africa-hluhluwe-giraffes-pattern.jpg?cs=srgb&dl=pexels-pixabay-34098.jpg&fm=jpg" alt="Image 2" class="gallery-image"  height="300px" width="300px">
+        </div>
+          <div class="property">
+          <img src="https://images.pexels.com/photos/792381/pexels-photo-792381.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Image 3" class="gallery-image"  height="300px" width="300px">
+        </div>
+          <div class="property">
+          <img src="https://images.pexels.com/photos/1851164/pexels-photo-1851164.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Image 4" class="gallery-image"  height="300px" width="300px">
+        </div>
+          <div class="property">
+          <img src="https://images.pexels.com/photos/1431465/pexels-photo-1431465.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Image 5" class="gallery-image" height="300px" width="300px">
+        </div>
+          <div class="property">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh1Uz1Ifz8HTRH9O4XHXWcAaxnN9a20F0-sA&s" alt="Image 6" class="gallery-image"  height="300px" width="300px">
+        </div>
+          <div class="property">
+          <img src="https://media.newyorker.com/photos/62c4511e47222e61f46c2daa/4:3/w_2663,h_1997,c_limit/shouts-animals-watch-baby-hemingway.jpg" alt="Image 7" class="gallery-image" height="300px" width="300px">
+        </div>
+          <div class="property">
+          <img src="https://images.pexels.com/photos/162140/duckling-birds-yellow-fluffy-162140.jpeg?cs=srgb&dl=pexels-pixabay-162140.jpg&fm=jpg" alt="Image 8" class="gallery-image"  height="300px" width="300px">
+        </div>
+          <div class="property">
+          <img src="https://animalsmart.org/ResourcePackages/AnimalSmart/assets/dist/content/species-cat_f931wg_c_scale,w_1524.jpg" alt="Image 9" class="gallery-image" height="300px" width="300px">
+         </div>
+          </div>
+
+          <div class="popup-image">
+            <span>&times;</span>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3HTgKkm-tBcNbiLG5eCL12nOngY_fEta2BA&s" alt="">
+          </div>
+        
+      </div>
+
+      <script>
+        document.querySelectorAll('.gallery-container img').forEach(image => {
+    image.onclick = () => {
+document.querySelector('.popup-image').style.display = 'block';
+document.querySelector('.popup-image img').src= image.getAttribute('src');
+}
+});
+
+
+document.querySelector('.popup-image span').onclick = () => {
+    document.querySelector('.popup-image').style.display = 'none';
+}
+      </script>
+      
+</body>
+</html>

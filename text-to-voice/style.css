@@ -1,0 +1,90 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+.hero{
+width:100%;
+min-height: 100vh;
+background:linear-gradient(45deg,#6b73eb,#c875e9);
+display:flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+color: azure;
+}
+
+.hero h1{
+    font-size: 45px;
+    font-weight: 500;
+    margin-top: -50px;
+    margin-bottom: 50px;
+}
+
+.hero h1 span{
+    color: rgb(221, 22, 88);
+}
+
+textarea{
+    width:600px;
+    height: 250px;
+    font-size: 15px;
+    margin:0;
+    padding:20px;
+    color:black;
+    background-color: rgb(111, 111, 192);
+    border:2px solid rgb(204, 112, 112);
+    border-radius: 10px;
+    outline: 0;
+    margin-bottom: 30px;
+    resize: none;
+}
+
+textarea::placeholder{
+    font-size:16px;
+    color:#ddd;
+}
+
+.row{
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:3rem;
+}
+
+button{
+    background: #ff2963;
+    font-size: 16px;
+    color:#fff;
+    padding:10px 30px;
+    border-radius: 5px;
+    cursor:pointer;
+    outline:0;
+    display: flex;
+    align-items: center;
+}
+
+button img{
+font-size: 16px;
+margin-right: 10px;
+}
+
+select{
+    color:#fff;
+    flex:1;
+    background: #403d84;
+    height:50px;
+    padding:0px 20px;
+    border: 0;
+    outline:0;
+    border-radius: 35px;
+    appearance: none;
+    background-image: url(images/dropdown.png);
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position:right center;
+} 
+    
